@@ -1,0 +1,31 @@
+name: Build APK Buku Kas Sultan
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download kode lu
+        uses: actions/checkout@v4
+        
+      - name: Cek file ada apa aja
+        run: ls -la
+        
+      - name: Install Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install Flet + Library
+        run: pip install flet-cli==0.86.0 reportlab openpyxl pillow
+        
+      - name: Build APK + Auto Yes Flutter
+        run: yes | flet build apk main.py --build-number 1
+        
+      - name: Upload APK ke Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: BukuKasSakha-Sultan.apk
+          path: dist/*.apk
