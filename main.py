@@ -1,6 +1,8 @@
 import flet as ft
 import sqlite3
+import os
 from datetime import datetime, timedelta
+from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 from openpyxl import Workbook
 import hashlib
