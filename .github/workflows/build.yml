@@ -19,7 +19,7 @@ jobs:
           python-version: '3.11'
           
       - name: Install Flet + Library
-        run: pip install flet-cli==0.86.0 reportlab openpyxl pillow
+        run: pip install flet-cli==0.85.3 reportlab openpyxl pillow
         
       - name: Build APK + Auto Yes Flutter
         run: yes | flet build apk main.py --build-number 1
