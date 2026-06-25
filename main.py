@@ -36,7 +36,7 @@ def main(page: ft.Page):
     page.title = "Buku Kas Sakha"
     page.padding = 20
     page.theme_mode = ft.ThemeMode.LIGHT
-    page.transition = ft.PageTransitionTheme.CUPERTINO # Animasi ganti halaman
+    page.transition = ft.PageTransitionTheme.FADE # Animasi ganti halaman
 
     filter_aktif = "Semua"
     search_text = ""
